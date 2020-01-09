@@ -12,6 +12,7 @@ RCT_EXPORT_MODULE()
 
 - (LTMorphingLabel *)view {
     LTMorphingLabel *label = [[LTMorphingLabel alloc] init];
+    label.textAlignment = NSTextAlignmentCenter;
     return label;
 }
 
@@ -45,7 +46,8 @@ RCT_CUSTOM_VIEW_PROPERTY(value, NSString *, LTMorphingLabel) {
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(size, NSNumber *, LTMorphingLabel) {
-    [view setFont:[UIFont systemFontOfSize: [json integerValue]]];
+    [view setFont:[UIFont fontWithName:@"HelveticaNeue" size: [json integerValue]]];
+//    [view setFont:[UIFont systemFontOfSize: [json integerValue]]];
 }
 
 + (UIColor *) colorFromHexCode:(NSString *)hexString {
